@@ -9,7 +9,7 @@ import os
 
 def main():
 
-    if len(sys.argv) != 3:
+    if len(sys.argv) <3:
         sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
         sys.exit(1)
 
