@@ -1,25 +1,24 @@
 #!/usr/bin/python3
-"""script that tanked an argument 2 strings"""
-
-
-from sys import argv, exit, stderr
+'''
+This module check the files params in the sys
+Argv[1] is a file input
+Argv[2] is a file output
+'''
+import sys
 import os
 
 
-def main():
-    """tanked an argument 2 strings"""
-    if len(argv) < 3:
-        print("Usage: ./markdown2html.py README.md README.html", file=stderr)
-        exit(1)
-        
-    markdown_file = argv[1]
-    output_file_name = argv[2]
-
-    if not os.path.exists(markdown_file):
-        print(f"Missing {markdown_file}", file=stderr)
-        exit(1)
-
-    exit(0)
-
 if __name__ == "__main__":
-    main()
+
+    if len(sys.argv) != 3:
+        sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
+        sys.exit(1)
+
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+
+    if not os.path.isfile(input_file):
+        sys.stderr.write(f"Missing {input_file}\n")
+        sys.exit(1)
+    sys.exit(0)
+    
