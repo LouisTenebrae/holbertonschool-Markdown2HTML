@@ -14,7 +14,7 @@ def main():
 
     # Ensure at least 3 arguments are provided: script name, input file,
     # and output file
-    if len(sys.argv) < 3:
+    if len(sys.argv) != 3:
         # Print usage error message to stderr
         sys.stderr.write("Usage: ./markdown2html.py README.md README.html")
         # Exit with an error code 1
